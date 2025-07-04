@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inicio</title>
+
+  <!-- CSS y JS en orden correcto -->
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/persona.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ✅ Header importado correctamente -->
+<div th:replace="fragments/header :: navbar"></div>
+
+
+<!--carrusel-->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/img/servi7.png" class="d-block w-100" alt="Imagen 1">
+      <div class="carousel-caption text-start">
+        <h1>Jornadas de Prevención y Detección Temprana</h1>
+        <p>Espacios gratuitos donde las personas pueden acceder a controles médicos básicos, charlas informativas y orientación profesional para cuidar su salud.</p>
+
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="/img/servi8.png" class="d-block w-100" alt="Imagen 2">
+      <div class="carousel-caption text-end">
+        <h1>Actividades Comunitarias de Bienestar</h1>
+        <p>Talleres, campañas y actividades que promueven hábitos saludables, desde nutrición hasta salud mental, pensados para toda la familia.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Controles para mover el carrusel -->
+<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<section class="pagina-servicios">
+  <section class="servicios-container">
+    <div class="experiencia-box">
+      <h1>Eventos de<br>Salud</h1>
+    </div>
+
+    <div class="servicios-contenido">
+      <h6 class="subtitulo">NUESTROS SERVICIOS</h6>
+      <h1 class="titulo-principal">Explora nuestro servicios</h1>
+
+      <div class="tarjetas-servicio">
+        <div class="tarjetas-scroll-wrapper">
+          <div class="tarjetas-servicio scroll-horizontal">
+            <div class="tarjeta">
+              <div class="icono-servicio">
+                <i class="fa fa-water"></i>
+              </div>
+              <h4>Categorias de salud</h4>
+              <p>Agrupamos nuestras acciones, campañas y actividades en distintas áreas clave de la salud, para informar, educar y prevenir</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Salud Familiar y Comunitaria</li>
+                <li><i class="fa fa-check text-success"></i> Salud Infantil y Adolescente</li>
+                <li><i class="fa fa-check text-success"></i> Salud Mental y Bienestar Emocional</li>
+                <li><i class="fa fa-check text-success"></i> Salud Sexual y Reproductiva</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal1')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <div class="modal-header">
+                  <h2>Categorias de salud</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>Esta sección organiza y presenta diferentes áreas temáticas relacionadas con la salud, permitiendo a los usuarios explorar contenido, campañas,
+                    jornadas y recursos educativos de manera clara y enfocada. Su propósito es informar, prevenir y promover el bienestar general en la comunidad, más
+                    allá de la atención médica directa.</p>
+                  <img src="/img/eve1.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Facilita el acceso a información relevante: </b> Ayuda a los usuarios a encontrar rápidamente temas de salud que les interesen o afecten directamente.</li>
+                    <li> <b>Fomenta la prevención y el autocuidado: </b> Ofrece recursos y consejos prácticos para mantener una vida saludable y prevenir enfermedades.</li>
+                    <li> <b>Promueve la participación en actividades comunitarias: </b> Conecta al usuario con campañas, charlas o jornadas según la categoría de salud que necesite.</li>
+                    <li><b>Educa de forma clara y segmentada: </b> Permite difundir información especializada en áreas como salud mental, nutrición, salud sexual, etc., de manera accesible.</li>
+                    <li><b>Refuerza el compromiso de la clínica con el bienestar integral: </b> Demuestra que el enfoque no es solo curativo, sino también educativo y preventivo.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-tint"></i></div>
+              <h4>Capacitaciones</h4>
+              <p>Esta sección está dedicada a ofrecer programas de formación, talleres y cursos dirigidos a profesionales de la salud y público interesado</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Capacitación en Primeros Auxilios y RCP</li>
+                <li><i class="fa fa-check text-success"></i> Salud Mental y Manejo de Estrés en Profesionales de la Salud</li>
+                <li><i class="fa fa-check text-success"></i> Actualización Médica y Tratamientos Avanzados</li>
+                <li><i class="fa fa-check text-success"></i> Capacitación en Uso de Tecnologías Médicas</li>
+                <li><i class="fa fa-check text-success"></i> Ética Médica y Derechos del Paciente</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal2')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Modal para la tarjeta 2 -->
+            <div id="modal2" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <div class="modal-header">
+                  <h2>Capacitaciones</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>En nuestra clínica creemos en el valor del aprendizaje continuo como parte fundamental para brindar una atención de salud de calidad.
+                    Por eso, en esta sección ofrecemos programas de formación, cursos, talleres y actividades educativas dirigidos tanto a profesionales del área
+                    médica como a personas interesadas en ampliar sus conocimientos en salud. Contamos con profesionales capacitados, materiales actualizados y una
+                    metodología participativa que une la teoría con la práctica, asegurando una experiencia de aprendizaje enriquecedora y útil.</p>
+                  <img src="/img/eve2.png" alt="Imagen de calentador de agua">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Fortalece las competencias del personal de salud: </b> Brinda formación continua en áreas médicas, tecnológicas y de gestión clínica, mejorando la calidad del servicio.</li>
+                    <li> <b>Promueve la actualización profesional: </b> Ofrece acceso a conocimientos actualizados, nuevas técnicas, normativas y enfoques terapéuticos.</li>
+                    <li> <b>Fomenta la atención segura y de calidad </b> Las capacitaciones ayudan a garantizar prácticas más seguras, eficientes y centradas en el paciente.</li>
+                    <li><b>Impulsa el desarrollo humano y comunitario </b> Al incluir también al público general, se contribuye a una sociedad más informada, responsable y participativa en temas de salud.</li>
+                    <li><b>Conecta la teoría con la práctica clínica: </b> Mediante talleres prácticos, simulaciones o jornadas intensivas, se facilita el aprendizaje aplicado.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-water"></i></div>
+              <h4>Jornada de adultos mayores</h4>
+              <p>Actividades y servicios diseñados específicamente para el cuidado, apoyo y bienestar de las personas mayores.</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Atención Médica Preventiva y Evaluaciones de Salud</li>
+                <li><i class="fa fa-check text-success"></i> Asesoría Nutricional y Dieta Saludable</li>
+                <li><i class="fa fa-check text-success"></i> Actividades Físicas Adaptadas</li>
+                <li><i class="fa fa-check text-success"></i> Prevención de Caídas y Seguridad en el Hogar</li>
+                <li><i class="fa fa-check text-success"></i> Actividades Recreativas y Culturales</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal3')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal3" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <div class="modal-header">
+                  <h2>Jornada de adultos mayores</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>En nuestra clínica valoramos profundamente a las personas mayores y reconocemos la importancia de brindarles espacios dedicados a su bienestar físico, emocional y social.
+                    Por eso, organizamos jornadas especiales enfocadas en el cuidado integral del adulto mayor, promoviendo una vida activa, saludable y digna en esta etapa de la vida.
+                    Además, promovemos la participación activa en dinámicas grupales que fomentan la socialización, el sentido de pertenencia y la estimulación cognitiva. Cada jornada es una oportunidad
+                    para que las personas mayores se sientan acompañadas, valoradas y cuidadas. Estas actividades son coordinadas por profesionales de distintas áreas, garantizando un abordaje multidisciplinario y seguro.
+                    Porque envejecer con bienestar es posible, y queremos acompañar ese proceso con compromiso, conocimiento y cariño</p>
+                  <img src="/img/eve3.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Previenen enfermedades y complicaciones </b> A través de chequeos regulares, educación en salud y seguimiento personalizado.</li>
+                    <li> <b>Fomentan la autonomía y el autocuidado </b> Brindan herramientas y orientación para que los adultos mayores puedan cuidar su salud de forma activa e independiente.</li>
+                    <li> <b>Favorecen la socialización y el bienestar: </b> Generan espacios de encuentro que promueven la interacción, la recreación y la participación comunitaria.</li>
+                    <li><b>Ofrecen acompañamiento profesional: </b> Cada actividad está guiada por especialistas en geriatría, fisioterapia, nutrición, psicología, entre otros.</li>
+                    <li><b>Mejoran la calidad de vida: </b> Al integrar salud, actividad física, alimentación, recreación y contención emocional en una sola jornada.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-briefcase-medical"></i></div>
+              <h4>Campañas de sensibilización</h4>
+              <p>Actividades para aumentar la conciencia sobre problemas de salud específicos en la comunidad.</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Campañas sobre prevención de enfermedades (ej. cáncer, VIH, enfermedades cardiovasculares)</li>
+                <li><i class="fa fa-check text-success"></i> Programas educativos sobre higiene y salud pública</li>
+                <li><i class="fa fa-check text-success"></i> Distribución de materiales informativos</li>
+                <li><i class="fa fa-check text-success"></i> Eventos de sensibilización durante el Mes de la Concientización sobre el Cáncer.</li>
+                <li><i class="fa fa-check text-success"></i> Campañas en redes sociales para sensibilizar sobre la salud emocional.</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal4')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal4" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <div class="modal-header">
+                  <h2>Campañas de sensibilización</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>Nuestras campañas de sensibilización tienen como objetivo informar, educar y generar conciencia en la comunidad sobre temas clave de salud y
+                    bienestar. Estas iniciativas buscan transformar hábitos, eliminar estigmas y fomentar una cultura de prevención, promoviendo una ciudadanía más empática,
+                    responsable y comprometida con el cuidado de su salud y la de los demás. Estas acciones no solo informan, sino que también movilizan a la comunidad, invitan
+                    a la participación activa y refuerzan el compromiso social de nuestra clínica en la construcción de una sociedad más sana y consciente.</p>
+                  <img src="/img/eve4.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Aumentan el conocimiento sobre temas de salud importantes: </b> Brindan información clara y verificada que ayuda a prevenir enfermedades y actuar a tiempo.</li>
+                    <li> <b>Fomentan cambios positivos en la conducta </b> Motivan a adoptar hábitos saludables y responsables, tanto a nivel individual como colectivo.</li>
+                    <li> <b>Reducen el estigma y la desinformación </b> Abordan temas sensibles como salud mental, VIH, discapacidad o violencia con empatía y datos reales.</li>
+                    <li><b>Impulsan la participación comunitaria</b> Involucran a escuelas, empresas, familias y organizaciones en torno a causas de salud relevantes.</li>
+                    <li><b>Refuerzan el rol social de la clínica </b> Posicionan a la institución como un agente activo en la educación y el bienestar de la población.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-heart"></i></div>
+              <h4>Control para empresas</h4>
+              <p> Programas de salud ocupacional dirigidos a empresas para cuidar a sus empleados.</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Exámenes médicos preventivos para empleados</li>
+                <li><i class="fa fa-check text-success"></i> Talleres de bienestar laboral (ergonomía, prevención de estrés)</li>
+                <li><i class="fa fa-check text-success"></i> Charlas sobre prevención de accidentes en el trabajo</li>
+                <li><i class="fa fa-check text-success"></i> Campañas de vacunación dentro de las empresas</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal5')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal5" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal5')">&times;</span>
+                <div class="modal-header">
+                  <h2>Control para empresas</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>Nuestra clínica ofrece un servicio especializado de Control de Empresas, enfocado en la salud y el bienestar laboral. Este servicio permite a las organizaciones llevar un seguimiento médico preventivo,
+                    diagnóstico y de control para sus trabajadores, asegurando condiciones de trabajo saludables, cumplimiento normativo y una mejora en la productividad. Este servicio no solo cumple con las exigencias legales
+                    en salud laboral, sino que también fortalece el clima organizacional y demuestra el compromiso de la empresa con el bienestar de su equipo humano.
+
+                  </p>
+                  <img src="/img/eve5.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li><b>Previene enfermedades laborales y ausentismo: </b>Identifica factores de riesgo y actúa de manera anticipada para evitar bajas médicas y accidentes.</li>
+                    <li><b>Cumple con normativas legales y laborales: </b>Garantiza que la empresa esté alineada con los requisitos en salud ocupacional establecidos por la legislación vigente.</li>
+                    <li><b>Mejora el rendimiento y la productividad: </b>Un trabajador saludable rinde mejor y se siente más comprometido con su entorno laboral.</li>
+                    <li><b>Fortalece la imagen y responsabilidad social de la empresa: </b>Refleja una cultura organizacional preocupada por el bienestar y la calidad de vida de sus colaboradores.</li>
+                    <li><b>Ofrece datos y reportes útiles para la gestión empresarial: </b>Los controles permiten obtener información relevante para tomar decisiones en prevención y recursos humanos.</li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Puntos de navegación -->
+          <div class="scroll-dots">
+            <span class="dot" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<!--Question-->
+
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-content">
+      <div class="faq-left">
+        <h2 class="faq-title">Preguntas Frecuentes sobre Nuestros Eventos de Salud</h2>
+        <p class="faq-description">Consulta las dudas más comunes sobre los eventos de salud que organizamos. Nuestro objetivo es promover el bienestar comunitario mediante actividades informativas, preventivas y gratuitas.</p>
+
+        <div class="faq-item">
+          <button class="faq-question">Q: ¿Qué tipo de eventos de salud organiza la clínica?</button>
+          <div class="faq-answer">
+            <p>A: Organizamos campañas de vacunación, ferias de salud, charlas educativas, jornadas de despistaje y talleres sobre prevención de enfermedades.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Q: ¿Con qué frecuencia se realizan los eventos de salud?</button>
+          <div class="faq-answer">
+            <p>A: Organizamos eventos de forma mensual, aunque también realizamos actividades especiales en fechas importantes del calendario de salud.</p>
+          </div>
+        </div>
+
+
+        <div class="faq-item">
+          <button class="faq-question">Q: ¿Los eventos tienen algún costo?</button>
+          <div class="faq-answer">
+            <p>A: La mayoría de nuestros eventos son gratuitos y están abiertos a toda la comunidad. En caso de eventos especiales con cupo limitado, se indicará claramente si existe algún costo simbólico.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-right">
+        <img src="https://cdn-icons-png.flaticon.com/512/4403/4403531.png" alt="FAQ Illustration" />
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Footer insertado -->
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- Aquí se incluye el archivo JavaScript -->
+<script src="/js/scroll.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

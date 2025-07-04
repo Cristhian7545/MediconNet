@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Inicio</title>
+
+    <!-- CSS y JS en orden correcto -->
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/sucursales.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .sucursal {
+            flex: 1 1 30%;
+            max-width: 30%;
+            min-width: 250px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ✅ Header importado correctamente -->
+<div th:replace="fragments/header :: navbar"></div>
+
+<!-- Hero con imagen de fondo -->
+<section class="hero-section text-white d-flex align-items-center" style="background: url('/img/sede5.jpg') center/cover no-repeat; height: 500px;">
+    <div class="container">
+        <div class="text-start ps-md-5">
+            <h1 class="fw-bold mb-3">Estamos siempre cerca para darte una mejor atención</h1>
+            <div class="d-flex gap-3">
+                <a th:href="@{/reserva}" class="btn btn-primary btn-lg">Agendar tu cita</a>
+                <a th:href="@{/citas}" class="btn btn-light btn-lg text-dark border border-white">Ver citas</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fondo-section">
+    <div class="col">
+        <div class="row justify-content-center align-items-center p-5 m-5 border border-black">
+            <div class="text-center">
+                <i class="bi bi-eye-fill" style="font-size: 4rem; color:#006C84;"></i>
+            </div>
+            <h2 class="fw-bold text-center mb-5">NUESTRAS SUCURSALES</h2>
+            <div class="filter row justify-content-center align-items-center">
+                <div class="col-12 col-sm-3 text-center">
+                    <label for="region" class="form-label">Filtrar por región:</label>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <select id="region" class="form-select">
+                        <option value="all">Todo</option>
+                        <option value="piura">Piura</option>
+                        <option value="arequipa">Arequipa</option>
+                        <option value="lima">Lima</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-3">
+                    <button onclick="filterSucursales()" class="btn btn-dark w-100 mt-2 mt-sm-0">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="row p-5 m-5 border border-black">
+            <div class="sucursales row" id="sucursales">
+                <!-- Las sucursales se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="mapModal" class="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000;">
+        <div class="modal-content" style="background: #fff; margin: 10% auto; padding: 20px; width: 90%; max-width: 600px; position: relative;">
+            <span class="close" onclick="closeModal()" style="position: absolute; top: 10px; right: 20px; font-size: 28px; cursor: pointer;">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <iframe id="modalMap" src="" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+</section>
+
+<!-- Footer insertado -->
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- JS al final del body -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch("http://localhost:8080/api/sedes")
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById("sucursales");
+                container.innerHTML = "";
+
+                data.forEach(sede => {
+                    const sedeDiv = document.createElement("div");
+                    sedeDiv.classList.add("sucursal");
+                    sedeDiv.setAttribute("data-region", sede.region.toLowerCase());
+
+                    sedeDiv.onclick = () => showModal(sede.nombre, sede.descripcion, sede.mapaUrl);
+
+                    sedeDiv.innerHTML = `
+          <img src="${sede.imagenUrl}" alt="${sede.nombre}">
+          <h2 class="fw-bold text-center mt-3" style="font-size: 1.2rem; color: #333;">${sede.nombre}</h2>
+        `;
+
+                    container.appendChild(sedeDiv);
+                });
+            })
+            .catch(error => {
+                console.error("Error al cargar las sedes:", error);
+            });
+    });
+
+    function filterSucursales() {
+        const selectedRegion = document.getElementById('region').value;
+        const sucursales = document.querySelectorAll('.sucursal');
+
+        sucursales.forEach(sucursal => {
+            const region = sucursal.getAttribute('data-region');
+            sucursal.style.display = (selectedRegion === 'all' || selectedRegion === region) ? 'block' : 'none';
+        });
+    }
+
+    function showModal(title, description, mapSrc) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalDescription').textContent = description;
+        document.getElementById('modalMap').src = mapSrc;
+        document.getElementById('mapModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('mapModal').style.display = 'none';
+        document.getElementById('modalMap').src = "";
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('mapModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

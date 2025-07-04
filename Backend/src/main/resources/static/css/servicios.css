@@ -1,0 +1,312 @@
+body{
+    overflow-x: hidden;
+  }
+  
+#hero {
+    position: relative;
+    overflow: visible; /* ¡esto es crucial! */
+    z-index: 1;
+    padding-top: 200px;     /* AUMENTA el espacio arriba */
+  padding-bottom: 220px; 
+  min-height: 600px; 
+  display: flex;
+  align-items: center; 
+  }
+  
+  .hero-section {
+    background: linear-gradient(to right, #f0eae2, #d6d6d6); /* perla a gris */
+    overflow: hidden;
+  }
+  
+@keyframes floatY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .floating-img {
+    animation: floatY 4s ease-in-out infinite;
+    max-width: 260px;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+  }
+  
+  /* Contenedor que alinea las imágenes a la derecha */
+  .floating-image-wrapper {
+    gap: 0px;
+    justify-content: flex-end;
+    position: relative;
+    margin-right: 80px; 
+  }
+  
+  /* Imagen izquierda (por debajo) */
+  .img-left {
+    z-index: 1;
+    margin-right: -200px; /* superposición sutil */
+  }
+  
+  /* Imagen derecha (encima) */
+  .img-right {
+    position: absolute;
+    top: -30px; /* Ajusta para que la imagen 2 esté un poco más arriba que la 1 */
+    z-index: 2; 
+  }
+  
+  /* === TEXT STYLING === */
+  .highlight {
+    color: #541e46;
+    border-bottom: 2px solid #541e46;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .section-servicios h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.25rem;
+  }
+  
+
+  .lead {
+    font-family: 'Poppins', sans-serif; /* O cualquier fuente moderna que prefieras */
+    font-size: 1rem; /* Tamaño de fuente ligeramente mayor */
+    font-weight: 400; /* Peso de fuente semi-negrita */
+    color: #333333; /* Gris oscuro, muy legible */
+    line-height: 1.5; /* Mejor espaciado entre líneas */
+    letter-spacing: 0.5px; /* Un poco de espacio entre letras */
+    text-transform: uppercase; /* Si deseas que el texto esté en mayúsculas */
+  }
+  
+  
+  /* Contenedor de las olas */
+.animated-waves {
+    overflow: hidden;
+    position: absolute;
+    bottom: -50px;     /* <-- Aquí bajas las olas. Puedes aumentar más si quieres que estén más abajo */
+    left: 0;
+    width: 100%;
+    height: 200px;
+    pointer-events: none;
+    line-height: 0;
+    z-index: 0;
+  }
+  
+  /* Estilo de cada ola */
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 300%;
+    height: 100%;
+    animation: waveMove 10s ease-in-out infinite;
+  }
+  
+  /* Capas de olas */
+  .wave1 {
+    z-index: 1;
+    animation-delay: 0s;
+  }
+  
+  .wave2 {
+    z-index: 2;
+    animation-delay: -5s;
+  }
+  
+  .wave3 {
+    z-index: 3;
+    animation-delay: -2.5s;
+  }
+  
+  /* Animación */
+  @keyframes waveMove {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33%);
+    }
+  }
+
+  /*las cajetillas y texto*/
+  
+  .service .service-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background: #fff;
+  }
+  
+  .service .service-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service .service-img {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service .service-img img {
+    transition: 0.5s;
+  }
+  
+  .service .service-item:hover .service-img img {
+    transform: scale(1.05);
+  }
+  
+  .service .service-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00ffbb;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+
+  .service-content {
+    min-height: 200px; /* ajusta según necesidad */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .service-img {
+    height: auto;
+    max-height: 250px;  /* opcional, para que no crezca tanto */
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .service-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: scale(0.9); /* aumenta el zoom */
+  object-position: center top;
+  
+  }
+  
+  .hover-overlay {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  /* Solo la parte azul que sube desde abajo */
+  .hover-overlay::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #007bff;
+    z-index: 1;
+    transition: height 0.4s ease;
+  }
+  
+  /* Al hacer hover, sube */
+  .hover-overlay:hover::after {
+    height: 100%;
+  }
+  
+  
+  /* Texto encima */
+  .hover-overlay .service-content-inner {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+  }
+  
+  /* Cambia a blanco solo si está cubierto por azul */
+  .hover-overlay:hover h4,
+  .hover-overlay:hover p {
+    color: #fff !important;
+  }
+  
+  /* Botón oscuro */
+  .hover-overlay:hover .btn {
+    background-color: #002752 !important;
+    border-color: #002752 !important;
+    color: white !important;
+  }
+  
+  /* Efecto que baja desde la imagen (parte superior del recuadro) */
+.overlay-top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+    z-index: 1;
+    transition: height 0.5s ease;
+  }
+  
+  /* Al hacer hover, baja hasta el borde entre imagen y texto */
+  .overlay-top:hover::before {
+    height: 60%; /* Ajusta según el alto de tu imagen */
+  }
+
+
+  /*testimonio*/
+
+  .texto-descripcion {
+    font-size: 16px;
+    color: #666;
+    font-weight: 300;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+  
+  .testimonial-card {
+    background-color: #ebeef1;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    height: 100%;
+  }
+
+  .testimonial-img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .carousel-inner {
+    padding: 10px 0;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    background-color: #0056d2;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    opacity: 1; /* Asegura visibilidad */
+  visibility: visible;
+  }
+
+  .carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: #000;
+  }
+
+  .carousel-control-prev i, .carousel-control-next i {
+    font-size: 18px;
+  }

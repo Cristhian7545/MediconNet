@@ -1,0 +1,46 @@
+<div th:fragment="navbar">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom">
+        <div class="container-fluid header-wrapper">
+            <a class="navbar-brand" href="/">
+                <img src="/img/logitoo.png" alt="Logo" />
+            </a>
+
+            <ul class="navbar-nav flex-row align-items-center ms-auto gap-4">
+                <li class="nav-item"><a class="nav-link" href="/nosotros"><i class="fa-solid fa-house"></i> Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="/red"><i class="fa-solid fa-gauge"></i> Red</a></li>
+                <li class="nav-item"><a class="nav-link" href="/servicios"><i class="fa-solid fa-table-cells"></i> Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="/medico"><i class="fa-solid fa-border-all"></i> Médicos</a></li>
+
+                <!-- Botón Cuenta -->
+                <!-- Dropdown "Cuenta" con nombre dinámico -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="cuentaDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                        <span th:text="${nombreUsuario != null} ? ${nombreUsuario} : 'Cuenta'">Cuenta</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="cuentaDropdown">
+                        <!-- No autenticado -->
+                        <li th:if="${#authentication == null or #authentication.name == 'anonymousUser'}">
+                            <a class="dropdown-item" th:href="@{/login}">Iniciar sesión</a>
+                        </li>
+
+                        <!-- Autenticado -->
+                        <li th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+                            <a class="dropdown-item" th:href="@{/perfil}">Perfil</a>
+                        </li>
+                        <li th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+                            <form th:action="@{/logout}" method="post" class="dropdown-item p-0 m-0">
+                                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                                <button type="submit" class="btn btn-link w-100 text-start ps-3">Cerrar sesión</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+

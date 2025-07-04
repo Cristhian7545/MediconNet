@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+  }
+  
+  .text-center {
+    text-align: center;
+    margin: 0 auto 3rem;
+    font-family: 'Poppins', sans-serif;
+    max-width: 100%; /* Cambiado de 600px a 100% */
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+  }
+  
+
+/*testimonio*/
+
+.texto-descripcion {
+    font-size: 16px;
+    color: #666;
+    font-weight: 300;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+  
+  .testimonial-card {
+    background-color: #ebeef1;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    height: 100%;
+  }
+
+  .testimonial-img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .carousel-inner {
+    padding: 10px 0;
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    background-color: #0056d2;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    opacity: 1; /* Asegura visibilidad */
+  visibility: visible;
+  }
+
+  .carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: #000;
+  }
+
+  .carousel-control-prev i, .carousel-control-next i {
+    font-size: 18px;
+  }

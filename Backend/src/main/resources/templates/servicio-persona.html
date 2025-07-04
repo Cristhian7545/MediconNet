@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inicio</title>
+
+  <!-- CSS y JS en orden correcto -->
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/persona.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ✅ Header importado correctamente -->
+<div th:replace="fragments/header :: navbar"></div>
+
+
+<!--carrusel-->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/img/servi1.png" class="d-block w-100" alt="Imagen 1">
+      <div class="carousel-caption text-start">
+        <h1>Cuidamos de Ti, en Cada Etapa</h1>
+        <p>Ofrecemos soluciones efectivas y a medida para cada necesidad.</p>
+
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="/img/servi2.png" class="d-block w-100" alt="Imagen 2">
+      <div class="carousel-caption text-end">
+        <h1>Innovación y Calidad</h1>
+        <p>Nos adaptamos a tus necesidades con los mejores estándares.</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Controles para mover el carrusel -->
+<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+
+<section class="pagina-servicios">
+  <section class="servicios-container">
+    <div class="experiencia-box">
+      <h1>Servicio para<br>Personas</h1>
+    </div>
+
+    <div class="servicios-contenido">
+      <h6 class="subtitulo">NUESTROS SERVICIOS</h6>
+      <h1 class="titulo-principal">Explora los servicios que ofrecemos</h1>
+
+      <div class="tarjetas-servicio">
+        <div class="tarjetas-scroll-wrapper">
+          <div class="tarjetas-servicio scroll-horizontal">
+            <div class="tarjeta">
+              <div class="icono-servicio">
+                <i class="fa fa-water"></i>
+              </div>
+              <h4>Consultas médicas</h4>
+              <p>Contamos con consultas generales y especializadas, así como servicios de urgencias y seguimiento para enfermedades crónicas</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Evaluaciones generales de salud</li>
+                <li><i class="fa fa-check text-success"></i> Diagnóstico y tratamiento de enfermedades comunes</li>
+                <li><i class="fa fa-check text-success"></i> Chequeos preventivos y programas de salud</li>
+                <li><i class="fa fa-check text-success"></i> Consultas pediátricas</li>
+                <li><i class="fa fa-check text-success"></i> Apoyo psicológico y consultas emocionales</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal1')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <div class="modal-header">
+                  <h2>Consultas médicas</h2>
+                </div>
+                <div class="modal-body">
+
+                  <h3>Descripción del servicio</h3>
+                  <p>Las consultas médicas que ofrecemos están diseñadas para proporcionar atención integral y personalizada a nuestros pacientes, abordando una amplia gama de problemas de salud.
+                    Durante la consulta, se evalúa el estado general de salud del paciente, se revisan antecedentes médicos y familiares, y se realizan exámenes físicos o estudios diagnósticos según
+                    sea necesario. Nuestro objetivo es ofrecer una atención de calidad que no solo resuelva problemas médicos inmediatos, sino que también contribuya a la prevención de futuros problemas de salud.</p>
+                  <img src="/img/se1.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Acceso a Profesionales Especializados:</b> Consultas con médicos capacitados y con experiencia en diversas áreas de la salud.</li>
+                    <li> <b>Diagnóstico y Tratamiento Preciso:</b> Evaluación completa del estado de salud para ofrecer diagnósticos certeros y planes de tratamiento efectivos.</li>
+                    <li> <b>Mejora en la Calidad de Vida: </b> A través del tratamiento adecuado y la orientación, buscamos mejorar la calidad de vida del paciente.</li>
+                    <li><b>Seguimiento Continuo: </b>Nuestro equipo asegura un seguimiento adecuado de las condiciones de salud a lo largo del tiempo, garantizando una atención médica continua.</li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-tint"></i></div>
+              <h4>Examenes de laboratorio</h4>
+              <p>Amplia gama de exámenes de laboratorio para apoyar el diagnóstico preciso y el seguimiento de la salud de nuestros pacientes.</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Análisis de sangre </li>
+                <li><i class="fa fa-check text-success"></i> Pruebas de colesterol y glucosa</li>
+                <li><i class="fa fa-check text-success"></i> Pruebas de función tiroidea</li>
+                <li><i class="fa fa-check text-success"></i> Pruebas de embarazo y hormonas</li>
+                <li><i class="fa fa-check text-success"></i> Test de alergias e intolerancias</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal2')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Modal para la tarjeta 2 -->
+            <div id="modal2" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <div class="modal-header">
+                  <h2>Examenes de laboratorio</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>El servicio de exámenes de laboratorio permite obtener información precisa y confiable sobre el estado de salud de cada paciente, facilitando el diagnóstico,
+                    seguimiento y prevención de enfermedades. Contamos con un laboratorio clínico equipado con tecnología moderna y personal altamente capacitado que garantiza resultados rápidos,
+                    seguros y confidenciales. Estos exámenes son fundamentales para detectar alteraciones antes de que aparezcan síntomas, monitorear tratamientos médicos y confirmar diagnósticos
+                    clínicos con mayor exactitud. Nuestros procesos están alineados con altos estándares de calidad y bioseguridad, brindando tranquilidad tanto a los pacientes como a los profesionales
+                    de salud que dependen de estos resultados para tomar decisiones acertadas en el tratamiento.
+
+                  </p>
+                  <img src="/img/se2.png" alt="Imagen de calentador de agua">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Diagnóstico Temprano y Preciso: </b> Permiten detectar enfermedades en etapas iniciales, incluso antes de que aparezcan síntomas evidentes.</li>
+                    <li> <b>Prevención de Enfermedades: </b> Los chequeos regulares permiten anticiparse a posibles condiciones de salud y tomar medidas preventivas.</li>
+                    <li> <b>Resultados Confiables y Rápidos: </b> Utilizamos tecnología moderna que asegura precisión y entrega de resultados en tiempos óptimos.</li>
+                    <li><b>Apoyo al Diagnóstico Médico: </b> Complementan las consultas clínicas proporcionando datos objetivos y específicos del estado del paciente.</li>
+                    <li><b>Confidencialidad Garantizada: </b> Manejamos toda la información con estrictos protocolos de privacidad y seguridad de datos.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-water"></i></div>
+              <h4>Nutrición y bienestar</h4>
+              <p>Con planes personalizados que promueven hábitos alimenticios saludables..</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Asesoramiento nutricional personalizado</li>
+                <li><i class="fa fa-check text-success"></i> Suplementación nutricional recomendada</li>
+                <li><i class="fa fa-check text-success"></i> Educación sobre alimentación saludable y hábitos de vida</li>
+                <li><i class="fa fa-check text-success"></i> Control y prevención de la obesidad</li>
+                <li><i class="fa fa-check text-success"></i> Evaluación de composición corporal</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal3')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal3" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <div class="modal-header">
+                  <h2>Nutrición y bienestar</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>stá enfocada en mejorar la calidad de vida de nuestros pacientes a través de una alimentación equilibrada, hábitos saludables y el manejo integral del cuerpo y la mente. Nuestros nutricionistas
+                    clínicos trabajan de forma personalizada para elaborar planes alimenticios adaptados a las necesidades específicas de cada persona, considerando su estado de salud, estilo de vida, edad, actividad
+                    física y objetivos personales. Este servicio no solo está destinado a personas con enfermedades crónicas como diabetes, hipertensión u obesidad, sino también a quienes buscan mantener un peso saludable,
+                    mejorar su rendimiento deportivo o simplemente aprender a comer mejor..</p>
+                  <img src="/img/se3.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Prevención y Control de Enfermedades:</b> Apoyo en el tratamiento de patologías como obesidad, diabetes, hipertensión, colesterol alto, entre otras.</li>
+                    <li> <b>Mejora en la Calidad de Vida:</b> Al adoptar una alimentación más saludable y equilibrada, se mejora el estado de ánimo y el sueño.</li>
+                    <li> <b>Educación Alimentaria: </b> Orientación clara sobre cómo leer etiquetas, elegir alimentos adecuados y mantener buenos hábitos alimenticios a largo plazo.</li>
+                    <li><b>Enfoque Holístico: </b>Se trabaja en la relación entre alimentación, emociones, actividad física y estilo de vida saludable.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-briefcase-medical"></i></div>
+              <h4>Dr. Olnline</h4>
+              <p>Consultas médicas virtuales con nuestros profesionales de salud.</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Consultas médicas generales a distancia</li>
+                <li><i class="fa fa-check text-success"></i> Recetas médicas electrónicas y recomendaciones de tratamiento</li>
+                <li><i class="fa fa-check text-success"></i> Asesoramiento y consultas de salud mental</li>
+                <li><i class="fa fa-check text-success"></i> Orientación sobre resultados de exámenes médicos</li>
+                <li><i class="fa fa-check text-success"></i> Consultas de urgencias menores</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal4')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal4" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <div class="modal-header">
+                  <h2>Dr. Online</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descrpción del servicio</h3>
+                  <p>Nuestro servicio de Doctor Online te permite acceder a atención médica profesional desde cualquier lugar, de forma rápida, segura y sin necesidad de salir de casa. A través de videollamadas, nuestros médicos generales
+                    y especialistas pueden ayudarte a resolver dudas de salud, evaluar síntomas, interpretar exámenes, emitir diagnósticos iniciales y recetar tratamientos. Doctor Online es ideal para quienes tienen dificultad para trasladarse,
+                    cuentan con poco tiempo disponible, o simplemente desean recibir atención médica desde la comodidad de su hogar. Todo con confidencialidad, trato humano y respaldo profesional.</p>
+                  <img src="/img/se4.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Acceso Inmediato a un Médico:</b> Consulta rápida sin listas de espera ni desplazamientos.</li>
+                    <li> <b>Ahorro de Tiempo y Comodidad: </b> Evita traslados, salas de espera y aprovecha mejor tu tiempo.</li>
+                    <li> <b>Confidencialidad Asegurada: </b>  Las consultas se realizan en plataformas seguras y con total respeto por tu privacidad.</li>
+                    <li><b>Atención desde Cualquier Lugar: </b>Solo necesitas un dispositivo con conexión a internet para recibir atención médica.</li>
+                    <li><b>Atención Preventiva y Educativa: </b>También se brinda orientación sobre hábitos saludables, prevención de enfermedades y cuidado diario.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="tarjeta">
+              <div class="icono-servicio"><i class="fas fa-heart"></i></div>
+              <h4>Atención Domiciliaria</h4>
+              <p>Servicios personalizados para pacientes que requieren cuidados especiales.</p>
+              <ul>
+                <li><i class="fa fa-check text-success"></i> Atención a pacientes postquirúrgicos o con movilidad reducida</li>
+                <li><i class="fa fa-check text-success"></i> Administración de medicamentos y tratamientos intravenosos</li>
+                <li><i class="fa fa-check text-success"></i> Rehabilitación física y fisioterapia</li>
+                <li><i class="fa fa-check text-success"></i> Control de signos vitales y evaluación médica periódica</li>
+                <li><i class="fa fa-check text-success"></i> Asistencia para procedimientos médicos menores en casa</li>
+              </ul>
+              <a href="#" class="btn-leer-mas" onclick="openModal('modal5')">Detalle <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!--modal-->
+            <div id="modal5" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal('modal5')">&times;</span>
+                <div class="modal-header">
+                  <h2>Atención domicilaria</h2>
+                </div>
+                <div class="modal-body">
+                  <h3>Descripción del servicio</h3>
+                  <p>La atención domiciliaria es una solución integral pensada para brindar cuidados médicos y de salud directamente en el hogar del paciente. Es ideal para personas con movilidad
+                    reducida, en recuperación postquirúrgica, con enfermedades crónicas o en estado de vulnerabilidad. Todo esto con un enfoque centrado en el bienestar del paciente y la tranquilidad de su entorno familiar.
+                    Este tipo de atención permite continuar con el tratamiento o control médico sin necesidad de salir de casa, con el mismo estándar de calidad que recibirías en una clínica, pero adaptado a tus condiciones y necesidades personales. </p>
+                  <img src="/img/se5.png" alt="Imagen de reparación de drenaje">
+                  <br><br>
+                  <h3>Beneficios</h3>
+                  <ul>
+                    <li> <b>Comodidad Total: </b> Recibe atención profesional sin salir del hogar, evitando traslados innecesarios.</li>
+                    <li> <b>Ideal para Pacientes con Movilidad Reducida: </b> Perfecto para personas mayores, pacientes en recuperación o con enfermedades que dificultan el desplazamiento.</li>
+                    <li> <b>Tranquilidad para la Familia: </b> Saber que el paciente está atendido en casa genera mayor confianza y cercanía para sus seres queridos.</li>
+                    <li><b>Atención Humanizada: </b>El trato cercano y en un ambiente familiar mejora la experiencia del paciente y favorece su recuperación.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Puntos de navegación -->
+          <div class="scroll-dots">
+            <span class="dot" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!--Question-->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-content">
+      <div class="faq-left">
+        <h2 class="faq-title">Preguntas Frecuentes sobre Nuestros Servicios Clínicos</h2>
+        <p class="faq-description">Aquí encontrarás respuestas a las dudas más comunes sobre los servicios que ofrecemos en nuestra clínica. Queremos ayudarte a entender mejor cómo cuidamos de ti y de tu salud.</p>
+
+        <div class="faq-item">
+          <button class="faq-question">Q: ¿Qué servicios médicos generales ofrece la clínica?</button>
+          <div class="faq-answer">
+            <p>A: Contamos con consultas médicas generales, chequeos preventivos, control de enfermedades crónicas y atención primaria para toda la familia.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Q: ¿Cómo puedo agendar una cita médica?</button>
+          <div class="faq-answer">
+            <p>A: Para agendar una cita médica, primero debes registrarte en nuestra plataforma en línea. Una vez que hayas creado tu cuenta e iniciado sesión, podrás acceder al panel de usuario, seleccionar el servicio que necesitas, elegir al especialista y reservar la fecha y hora disponibles.</p>
+          </div>
+        </div>
+
+
+        <div class="faq-item">
+          <button class="faq-question">Q: ¿La clínica ofrece atención psicológica?</button>
+          <div class="faq-answer">
+            <p>A: Sí, ofrecemos servicios de salud mental con psicólogos certificados para atender consultas individuales, familiares y grupales.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="faq-right">
+        <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" alt="FAQ Illustration" />
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Footer insertado -->
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- Aquí se incluye el archivo JavaScript -->
+<script src="/js/scroll.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

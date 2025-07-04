@@ -1,0 +1,169 @@
+:root {
+    --primary-color: #6495ED;
+    --secondary-color: #f9fafb;
+    --accent-color: #4f46e5;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.register-container {
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.register-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://img.freepik.com/foto-gratis/doctor-tiro-medio-hablando-paciente_23-2149351661.jpg?semt=ais_hybrid&w=740');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.register-form {
+    background-color: white;
+    padding: 3rem 2.5rem;
+}
+
+.logo {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.btn-register {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.divider {
+    position: relative;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e5e7eb;
+    z-index: 1;
+}
+
+.divider span {
+    background-color: white;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+    color: var(--text-light);
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-btn i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.btn-google {
+    background-color: white;
+    color: var(--text-dark);
+    border: 1px solid #e5e7eb;
+}
+
+.btn-google:hover {
+    background-color: #f3f4f6;
+}
+
+.btn-apple {
+    background-color: black;
+    color: white;
+}
+
+.btn-apple:hover {
+    background-color: #333;
+}
+
+.additional-links {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.additional-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.additional-links a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.input-group-text {
+    background-color: transparent;
+    border-right: none;
+    color: var(--text-light);
+}
+
+.input-group .form-control {
+    border-left: none;
+}
+
+.form-floating label {
+    padding: 1rem 1.75rem;
+    color: var(--text-light);
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    color: var(--primary-color);
+}

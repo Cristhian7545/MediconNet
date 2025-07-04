@@ -1,0 +1,97 @@
+
+#region{
+	background-color: #6495ED;
+}
+
+.my-account a:hover, .information a:hover {
+	text-decoration: underline;
+}
+
+.error-message {
+	color: rgb(255, 73, 18);
+	font-size: 1.2rem;
+	margin-top: 1.0rem;
+}
+
+.filter button {
+	background-color: #888;
+	color: #fff;
+	border: none;
+}
+.sucursales {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	align-items: stretch;
+  }
+
+  .sucursal img {
+	width: 100%;
+	height: 400px; /* altura fija */
+	object-fit: cover; /* recorta para que se vea bien sin deformarse */
+	border-radius: 6px;
+	margin-bottom: 10px;
+  }
+
+  .descripcion {
+	flex-grow: 1;
+  }
+
+  button {
+	margin-top: 10px;
+	align-self: flex-start;
+  }
+  
+  /* Efecto al pasar el cursor */
+  .sucursal:hover {
+    transform: scale(1.05);
+  }
+  
+.sucursal:hover {
+	transform: scale(1.05);
+}
+
+.modals {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+	padding-top: 60px;
+}
+.modals-content-sucursal {
+	background-color: #fefefe;
+	margin: 5% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 700px;
+	border-radius: 10px;
+	font-size: 16px;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+iframe {
+	width: 100%;
+	height: 400px;
+	border: 0;
+	border-radius: 5px;
+	margin-top: 25px;
+}
+

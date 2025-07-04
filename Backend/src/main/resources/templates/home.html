@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Inicio</title>
+
+    <!-- CSS y JS en orden correcto -->
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+
+<!-- ✅ Header importado correctamente -->
+<div th:replace="fragments/header :: navbar"></div>
+
+<!-- Bienvenida solo si ha iniciado sesión -->
+<div th:if="${#authentication != null and #authentication.name != 'anonymousUser'}">
+    <h2>Bienvenido, <span th:text="${#authentication.name}">Usuario</span></h2>
+</div>
+
+<!-- Acciones accesibles para todos (validadas con seguridad) -->
+<p><a th:href="@{/reserva}">Reserva de cita</a></p>
+<a th:href="@{/citas}">
+    <button>Ver Citas</button>
+</a>
+<!-- Footer insertado -->
+<div th:replace="fragments/footer :: footer"></div>
+
+<!-- JS al final del body (recomendado) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

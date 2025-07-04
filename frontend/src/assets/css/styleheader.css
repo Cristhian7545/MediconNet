@@ -1,0 +1,73 @@
+/* Sidebar base */
+.sidebarr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100vh;
+  background-color: rgba(240, 240, 240, 0.95);
+  border-right: 1px solid #ccc;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo-img {
+  height: 80px;
+  width: auto;
+  margin-bottom: 2rem;
+}
+
+/* Navegación */
+.navbar-navv {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.nav-itemm {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-linkk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-linkk i {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.nav-linkk:hover,
+.nav-linkk.active {
+  color: #007BFF;
+}
+
+.nav-linkk:hover i,
+.nav-linkk:focus i,
+.nav-linkk:active i {
+  color: #007BFF;
+}
+
+/* Para que el contenido principal no quede debajo del sidebar */
+main {
+  margin-left: 260px; /* espacio lateral igual o mayor al sidebar */
+  padding: 2rem;
+}

@@ -1,0 +1,52 @@
+:root { 
+    --primary-color: #6495ED;
+    --secondary-color: #f9fafb;
+    --accent-color: #4f46e5;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.login-container {
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.login-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://www.shutterstock.com/image-photo/friendly-positive-pediatrician-examining-patient-600nw-2261002203.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-form {
+    background-color: white;
+    padding: 3rem 2.5rem;
+}
+
+.logo {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
